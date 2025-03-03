@@ -8,20 +8,24 @@ public class Player : MonoBehaviour
     public bool hasBlueKey = false;
     public bool hasRedKey = false;
 
+    public GameObject playerCamera;
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            RaycastHit hit;
-            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit))
+            RaycastHit hit; //This variable contains the data of what will be hit by the Raycast
+            if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit)) //
             {
-                if (hit.collider.tag == "Door")
+                if (hit.collider.gameObject.tag == "Door")
                 {
-                    LockedDoor door = hit.collider.GetComponent<LockedDoor>();
+                    LockedDoor door = hit.collider.gameObject.GetComponent<LockedDoor>();
                     
                     if (door.isDoorLocked == true)
                     {
-                        //Open The Door
+                        // Open Door
+
+                        door.OpenDoor(); //Opens the door
                     }
                     else 
                     {
@@ -30,6 +34,8 @@ public class Player : MonoBehaviour
                             (door.keyColorRequired == KeyColor.Red && hasRedKey))
                         {
                             //Open The Door
+
+                            door.OpenDoor(); //Opens the door
                         }
                     }
                     

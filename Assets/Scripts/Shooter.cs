@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Shooter : MonoBehaviour
 {
-    public GameObject bulletPrefab
-    public float bulletForce
+    public GameObject bulletPrefab;
+    public float bulletForce;
     public Transform bulletSpawnPosition;
 
     void Update()
