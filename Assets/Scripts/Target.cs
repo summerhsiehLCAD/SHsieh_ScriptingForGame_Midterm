@@ -26,7 +26,7 @@ public class Target : MonoBehaviour
         }
         else if (targetType == TargetType.Movable)
         {
-            this.GetComponent<MeshRenderer>().material.color = Color.red;
+            this.GetComponent<MeshRenderer>().material.color = Color.cyan;
         }
         else if (targetType == TargetType.DestroyableWithSound)
         {
@@ -36,7 +36,7 @@ public class Target : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Ballet")
+        if (other.gameObject.tag == "Bullet")
         {
             
             
@@ -54,9 +54,15 @@ public class Target : MonoBehaviour
             }
             else if (targetType == TargetType.DestroyableWithSound)
             {
-                targetSound.Play();
+                //GIVE IT AUDIO HERE
+                //targetsound.Play();
                 gameObject.SetActive(false);
             }
         }
+    }
+
+    public void TargetRespawns()
+    {
+        this.gameObject.SetActive(true);
     }
 }

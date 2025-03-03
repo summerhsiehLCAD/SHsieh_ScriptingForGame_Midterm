@@ -14,9 +14,9 @@ public class Shooter : MonoBehaviour
         {
             GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPosition.position, bulletSpawnPosition.rotation);
 
-            bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.up * bulletForce);
+            bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.forward * bulletForce);
 
-            Destroy(bullet, .25f);
+            Destroy(bullet, 3f);
         }
     }
 }
