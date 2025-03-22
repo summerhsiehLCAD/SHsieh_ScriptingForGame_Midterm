@@ -11,7 +11,7 @@ public enum KeyColor //Enum is a classification, and sets these new terms to be 
 
 public class Key : MonoBehaviour
 {
-    public KeyColor keyColor; //Allows for us to change the color of the keys in accordance to the terms listed in public enum
+    public KeyColor keyColor; //Allows for us to change the color of the keys in accordance to the terms listed in public enum.
 
     private void Start()
     {
@@ -29,7 +29,7 @@ public class Key : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other) //This function will run once the trigger has activated
+    void OnTriggerEnter(Collider other) //This function will run once the trigger has activated.
     {
         if (other.tag == "Player") //if the tag is labeled as Player, it will do the following:
         {
@@ -39,24 +39,24 @@ public class Key : MonoBehaviour
             {
                 if (player.hasGreenKey == false) //If the player doesn't have a green key it will do the follwing:
                 {
-                    player.hasGreenKey = true; //The player will pick up the green key, and now have it in inventory
-                    Destroy(this.gameObject); //The gameObject key will be destroyed
+                    player.hasGreenKey = true; //The player will pick up the green key, and now have it in inventory.
+                    Destroy(this.gameObject); //The gameObject key will be destroyed.
                 }
             }
             else if (keyColor == KeyColor.Blue) //Checks the enum and whether or not if the key is listed as blue, and if it is blue it will do the following:
             {
                 if (player.hasBlueKey == false) //If the player doesn't have a blue key it will do the follwing:
                 {
-                    player.hasBlueKey = true; //The player will pick up the blue key, and now have it in inventory
-                    Destroy(this.gameObject); //The gameObject key will be destroyed
+                    player.hasBlueKey = true; //The player will pick up the blue key, and now have it in inventory.
+                    Destroy(this.gameObject); //The gameObject key will be destroyed.
                 }
             }
             else if (keyColor == KeyColor.Red) //Checks the enum and whether or not if the key is listed as red, and if it is red it will do the following:
             {
                 if (player.hasRedKey == false) //If the player doesn't have a red key it will do the follwing:
                 {
-                    player.hasRedKey = true; //The player will pick up the red key, and now have it in inventory
-                    Destroy(this.gameObject); //The gameObject key will be destroyed
+                    player.hasRedKey = true; //The player will pick up the red key, and now have it in inventory.
+                    Destroy(this.gameObject); //The gameObject key will be destroyed.
                 }
             }
             
